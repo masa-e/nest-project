@@ -96,3 +96,27 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+## プロジェクト作成
+
+```bash
+curl https://get.volta.sh | bash
+
+source ~/.zshrc
+
+volta install node@22.9.0
+
+node -v
+
+npx @nestjs/cli new backend
+```
+
+## 起動
+
+```bash
+# 依存関係をインストール（初回のみ）
+npm install
+
+# 開発モードで起動
+npm run start:dev
+```
