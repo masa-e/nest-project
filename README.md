@@ -120,3 +120,17 @@ npm install
 # 開発モードで起動
 npm run start:dev
 ```
+
+## DB起動(postgres)
+
+### Dockerコンテナ起動
+
+```bash
+docker compose up -d
+```
+
+### ログイン
+
+```bash
+docker exec -it postgres psql -U {$ユーザー名} -d {$DB名}
+```
