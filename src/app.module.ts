@@ -3,20 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ExampleModule } from './example/example.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Example } from './example/example.entity';
+import { AppDataSource } from '../data-source'; // ここでデータソースを読み込む
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'nestjsuser',
-      password: 'nestjspass',
-      database: 'nestjs',
-      entities: [Example], // 使用するエンティティを登録
-      synchronize: true, // 初回のみ true (本番環境では false)
-    }),
+    TypeOrmModule.forRoot(AppDataSource.options), // TypeORM 設定を適用
     ExampleModule,
   ],
   controllers: [AppController],
